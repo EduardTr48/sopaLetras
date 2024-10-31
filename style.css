@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap");
+
+html {
+   font-size: 62.5%;
+   box-sizing: border-box;
+}
+
+body {
+   font-family: "Silkscreen", cursive;
+   text-align: center;
+   font-size: 1.4rem;
+   background-color: #3ff2;
+}
+
+.contenedor {
+   max-width: 80rem;
+   margin: 0 auto;
+}
+
+.areaJuego {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.grid-elemento {
+   border: 1px solid black;
+   padding: 0.8rem;
+   font-size: 3rem;
+   text-align: center;
+   cursor: pointer;
+}
+
+.gridContenedor {
+   width: 100%;
+   display: grid;
+   /* grid-template-columns: auto auto auto auto auto;
+   grid-template-rows: auto auto auto auto auto; */
+}
+
+.ganaste{
+   padding: 30px;
+   background-color: green;
+   color: white;
+   font-size: 14px;
+}
