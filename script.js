@@ -23,6 +23,11 @@ function iniciar() {
    elementos.gridTam = document.createElement('input');
    elementos.mensajeError = document.createElement('div');
 
+   modal = document.createElement("div");
+   btnReiniciar = document.createElement("button");
+   btnReiniciar.textContent = "Reinicar"; 
+   modal.append(btnReiniciar);
+   
    //Se agregan los elementos al area del juego(HTML)
    elementos.areaJuego.append(elementos.gridContenedor);
    elementos.areaJuego.append(elementos.miLista);
@@ -36,6 +41,12 @@ function iniciar() {
    elementos.mensajeError.style.color = 'red';
    elementos.gridTam.value = 7;
    elementos.boton.addEventListener('click', iniciarJuego);
+   btnReiniciar.addEventListener("click", ()=>{
+      modal.classList.remove("modal")
+      modal.remove()
+      iniciarJuego();
+     
+   })
 
 }
 
@@ -257,6 +268,9 @@ function ganadorChequear() {
       elementos.ganaste.src = 'img/ganaste.png';
       //Ancho de la imagen
       elementos.ganaste.style.width = '250px';
-      elementos.areaJuego.insertAdjacentElement('afterbegin', elementos.ganaste);
+      modal.classList.add("modal");
+
+      modal.append(elementos.ganaste);
+      document.body.append(modal);
    }
 }
